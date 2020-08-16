@@ -2,6 +2,7 @@ package com.geektech.quizapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ViewPager viewPager;
     private BottomNavigationView bottomNavigationView;
+    private Toolbar toolbar;
 
 
     @Override
@@ -25,25 +27,30 @@ public class MainActivity extends AppCompatActivity {
 
         viewPager = findViewById(R.id.main_view_pager);
         bottomNavigationView = findViewById(R.id.nav_view);
+        toolbar = findViewById(R.id.tool_bar);
 
         viewPager.setAdapter(new MainPagerAdapter(getSupportFragmentManager()));
-        viewPager.setOffscreenPageLimit(0);
+        viewPager.setOffscreenPageLimit(2);
+        toolbar.setTitle("Quiz");
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     default:
-                        viewPager.setCurrentItem(0);
+                        viewPager.setCurrentItem(0, false);
+                        toolbar.setTitle("Quiz");
                         break;
                     case R.id.history:
-                        viewPager.setCurrentItem(1);
+                        viewPager.setCurrentItem(1, false);
+                        toolbar.setTitle("History");
                         break;
                     case R.id.settings:
-                        viewPager.setCurrentItem(2);
+                        viewPager.setCurrentItem(2, false);
+                        toolbar.setTitle("Settings");
                         break;
                 }
-                return false;
+                return true;
             }
         });
 

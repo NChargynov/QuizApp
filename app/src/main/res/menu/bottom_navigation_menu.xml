@@ -3,7 +3,7 @@
         android:id="@+id/main"
         android:title=""
         android:enabled="true"
-        android:icon="@drawable/ic_main"/>
+        android:icon="@drawable/ic_shape"/>
     <item
         android:id="@+id/history"
         android:enabled="true"

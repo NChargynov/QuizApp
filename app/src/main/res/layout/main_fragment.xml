@@ -6,21 +6,13 @@
     android:orientation="vertical"
     tools:context=".ui.fragments.MainFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="28dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:text="Quiz"
-        android:textColor="@android:color/black"
-        android:textSize="24sp" />
 
     <ImageView
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        android:src="@drawable/ic_quiz" />
+        android:src="@drawable/ic_quiz_icon" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -64,14 +56,14 @@
         android:textSize="12sp" />
 
     <Spinner
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center"
         android:layout_width="240dp"
         android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
         android:entries="@array/types"
         android:spinnerMode="dropdown" />
 
-        <TextView
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
@@ -80,23 +72,23 @@
         android:textSize="12sp" />
 
     <Spinner
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center"
         android:layout_width="240dp"
         android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
         android:entries="@array/types"
         android:spinnerMode="dropdown" />
 
     <Button
-        android:textColor="@android:color/white"
-        android:background="@drawable/bg_button"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"
-        android:clickable="true"
-        android:text="Start"
         android:layout_width="200dp"
         android:layout_height="48dp"
-        android:focusable="true" />
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_button"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="Start"
+        android:textColor="@android:color/white" />
 
 
 </LinearLayout>

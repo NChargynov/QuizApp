@@ -1,15 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.fragments.SettingsFragment">
 
     <TextView
-        android:textSize="50sp"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Settings" />
+        android:layout_marginTop="20dp"
+        android:padding="22dp"
+        android:paddingLeft="23dp"
+        android:gravity=""
+        android:textColor="#333333"
+        android:textSize="28sp"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:text="Share this app"
+        app:drawableEndCompat="@drawable/ic_right" />
 
-</FrameLayout>
+    <TextView
+        android:padding="22dp"
+        android:paddingLeft="23dp"
+        android:gravity=""
+        android:textColor="#333333"
+        android:textSize="28sp"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:text="Rate us"
+        app:drawableEndCompat="@drawable/ic_right" />
+
+    <TextView
+        android:padding="22dp"
+        android:paddingLeft="23dp"
+        android:gravity=""
+        android:textColor="#333333"
+        android:textSize="28sp"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:text="Leave feedback"
+        app:drawableEndCompat="@drawable/ic_right"/>
+
+    <TextView
+        android:padding="22dp"
+        android:paddingLeft="23dp"
+        android:gravity=""
+        android:textColor="#BE52F2"
+        android:textSize="28sp"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:text="Clear history"
+        app:drawableEndCompat="@drawable/ic_right"/>
+
+</LinearLayout>
