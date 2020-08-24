@@ -16,8 +16,8 @@
 
     <com.geektech.quizapp.ui.widgets.NonScrollViewPager
         android:id="@+id/main_view_pager"
-        android:layout_width="413dp"
-        android:layout_height="622dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/nav_view"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tool_bar" />

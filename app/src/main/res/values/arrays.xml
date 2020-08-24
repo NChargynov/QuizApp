@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="types">
-        <item>All</item>
-        <item>first</item>
+    <string-array name="category">
+        <item>Any</item>
+        <item>1</item>
+    </string-array>
+
+    <string-array name="difficult">
+        <item>Any</item>
+        <item>easy</item>
+        <item>medium</item>
+        <item>hard</item>
     </string-array>
 </resources>
