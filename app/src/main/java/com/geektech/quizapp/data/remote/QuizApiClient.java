@@ -1,9 +1,7 @@
 package com.geektech.quizapp.data.remote;
 
 import android.util.Log;
-
 import com.geektech.quizapp.models.QuizResponse;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -21,12 +19,13 @@ public class QuizApiClient implements IQuizApiClient{
 
     QuizApi client = retrofit.create(QuizApi.class);
 
+
     @Override
     public void getQuestions(
             int amount,
-            String category,
+            Integer category,
             String difficulty,
-            final QuestionsCallBack callBack) {
+            QuestionsCallBack callBack) {
         Call<QuizResponse> call = client.getQuestions
                 (amount,
                 category,
@@ -38,6 +37,7 @@ public class QuizApiClient implements IQuizApiClient{
                 if (response.isSuccessful()){
                     if (response.body() != null){
                         callBack.onSuccess(response.body().getResults());
+                        Log.d("ololo", response.body().getResults().toString());
                     } else {
                         callBack.onFailure(new Exception("Response & Body is empty" + response.code()));
                     }
@@ -57,7 +57,7 @@ public class QuizApiClient implements IQuizApiClient{
         @GET("api.php")
         Call<QuizResponse> getQuestions(
                 @Query("amount") int amount,
-                @Query("category") String category,
+                @Query("category") Integer category,
                 @Query("difficulty") String difficulty);
     }
 }

@@ -13,16 +13,46 @@ public class Question {
     private String question;
     @SerializedName("correct_answer")
     private String correctAnswer;
-    @SerializedName("incorrect_answer")
+    @SerializedName("incorrect_answers")
     private List<String> incorrectAnswer;
+    private List<String> allAnswers;
+    private int selectAnswerPosition;
+    private boolean isAnswered;
 
-    public Question(String category, String type, String difficulty, String question, String correctAnswer, List<String> incorrectAnswer) {
+    public boolean isAnswered() {
+        return isAnswered;
+    }
+
+    public void setAnswered(boolean answered) {
+        isAnswered = answered;
+    }
+
+    public List<String> getAllAnswers() {
+        return allAnswers;
+    }
+
+    public void setAllAnswers(List<String> allAnswers) {
+        this.allAnswers = allAnswers;
+    }
+
+    public int getSelectAnswerPosition() {
+        return selectAnswerPosition;
+    }
+
+    public void setSelectAnswerPosition(int selectAnswerPosition) {
+        this.selectAnswerPosition = selectAnswerPosition;
+    }
+
+    public Question(String category, String type, String difficulty, String question, String correctAnswer, List<String> incorrectAnswer, List<String> allAnswers, int selectAnswerPosition, boolean isAnswered) {
         this.category = category;
         this.type = type;
         this.difficulty = difficulty;
         this.question = question;
         this.correctAnswer = correctAnswer;
         this.incorrectAnswer = incorrectAnswer;
+        this.allAnswers = allAnswers;
+        this.selectAnswerPosition = selectAnswerPosition;
+        this.isAnswered = isAnswered;
     }
 
     public String getCategory() {

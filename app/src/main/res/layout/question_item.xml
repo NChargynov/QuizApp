@@ -1,0 +1,104 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/tv_question_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="80dp"
+        android:text="What is the largest city and commercial capital of Sri Lanka?"
+        android:textAlignment="center"
+        android:textColor="#1A051D"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/multiply_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="47dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_question_text">
+
+        <Button
+            android:id="@+id/btn_multiply_answer_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_button_answer"
+            android:text="Colombo"
+            android:textColor="#6979F8" />
+
+        <Button
+            android:id="@+id/btn_multiply_answer_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_button_answer"
+            android:text="Moratuwa"
+            android:textColor="#6979F8" />
+
+
+        <Button
+            android:id="@+id/btn_multiply_answer_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_button_answer"
+            android:text="Negombo"
+            android:textColor="#6979F8" />
+
+
+        <Button
+            android:id="@+id/btn_multiply_answer_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_button_answer"
+            android:text="Kandy"
+            android:textColor="#6979F8" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/boolean_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="47dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_question_text">
+
+        <Button
+            android:id="@+id/btn_boolean_answer_true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_button_answer"
+            android:text="Yes"
+            android:textColor="#6979F8" />
+
+        <Button
+            android:id="@+id/btn_boolean_answer_false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_button_answer"
+            android:text="No"
+            android:textColor="#6979F8" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
