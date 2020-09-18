@@ -22,8 +22,10 @@ public class QuizResult {
     private String difficulty;
     @ColumnInfo(name = "correct_answer_result")
     private int correctAnswerResult;
+    @ColumnInfo(name = "questions")
     @TypeConverters({QuestionConverter.class})
     private List<Question> questions;
+    @ColumnInfo(name = "created_at")
     @TypeConverters({DateConverter.class})
     private Date createdAt;
 

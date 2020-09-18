@@ -14,13 +14,19 @@ import java.util.List;
 public interface QuizDao {
 
     @Insert
-    void insert(QuizResult quizResult);
+    long insert(QuizResult quizResult);
 
     @Delete
     void delete(QuizResult quizResult);
 
     @Query("SELECT * FROM quizresult WHERE id = :id")
     QuizResult getById(int id);
+
+    @Query("DELETE FROM quizresult")
+    void deleteAll();
+
+    @Query("DELETE FROM quizresult WHERE id = :id")
+    void deleteById(int id);
 
     @Query("SELECT * FROM quizresult")
     LiveData<List<QuizResult>> getAll();

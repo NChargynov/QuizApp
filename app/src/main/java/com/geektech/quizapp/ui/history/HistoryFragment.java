@@ -1,5 +1,6 @@
 package com.geektech.quizapp.ui.history;
 
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.geektech.quizapp.R;
+import com.geektech.quizapp.models.History;
 import com.geektech.quizapp.ui.history.recycler.HistoryAdapter;
 
 import java.util.ArrayList;
@@ -25,7 +27,7 @@ public class HistoryFragment extends Fragment {
     private HistoryViewModel mViewModel;
     private HistoryAdapter historyAdapter;
     private RecyclerView recyclerView;
-    private List<String> list;
+    private List<History> currentHistories;
 
     public static HistoryFragment newInstance() {
         return new HistoryFragment();
@@ -41,6 +43,15 @@ public class HistoryFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(HistoryViewModel.class);
+        mViewModel.historyLiveData.observe(getActivity(), new Observer<List<History>>() {
+            @Override
+            public void onChanged(List<History> histories) {
+                if (histories != null){
+                    historyAdapter.updateHistory(histories);
+                    currentHistories = histories;
+                }
+            }
+        });
 
     }
 
@@ -48,14 +59,13 @@ public class HistoryFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        createRecyclerView(view);
+    }
+
+    private void createRecyclerView(View view) {
         recyclerView = view.findViewById(R.id.recycler_view);
-        list = new ArrayList<>();
-        list.add("Category:");
-        list.add("Category:");
-        list.add("Category:");
-        historyAdapter = new HistoryAdapter(list);
-        recyclerView.setAdapter(historyAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        
+        historyAdapter = new HistoryAdapter();
+        recyclerView.setAdapter(historyAdapter);
     }
 }

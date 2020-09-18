@@ -7,49 +7,92 @@
     android:orientation="vertical"
     tools:context=".ui.settings.SettingsFragment">
 
+    <View
+        android:layout_marginTop="40dp"
+        android:background="@android:color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="0.5dp"/>
+
     <TextView
-        android:layout_marginTop="20dp"
+        android:clickable="true"
+        android:background="?selectableItemBackground"
         android:padding="22dp"
         android:paddingLeft="23dp"
         android:gravity=""
         android:textColor="#333333"
-        android:textSize="28sp"
+        android:textSize="22sp"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:text="Share this app"
-        app:drawableEndCompat="@drawable/ic_right" />
+        app:drawableEndCompat="@drawable/ic_right"
+        android:focusable="true" />
+
+    <View
+        android:background="@android:color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="0.5dp"/>
 
     <TextView
+        android:clickable="true"
+        android:background="?selectableItemBackground"
         android:padding="22dp"
         android:paddingLeft="23dp"
         android:gravity=""
         android:textColor="#333333"
-        android:textSize="28sp"
+        android:textSize="22sp"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:text="Rate us"
-        app:drawableEndCompat="@drawable/ic_right" />
+        app:drawableEndCompat="@drawable/ic_right"
+        android:focusable="true" />
+
+    <View
+        android:background="@android:color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="0.5dp"/>
 
     <TextView
+        android:clickable="true"
+        android:background="?selectableItemBackground"
         android:padding="22dp"
         android:paddingLeft="23dp"
-        android:gravity=""
         android:textColor="#333333"
-        android:textSize="28sp"
+        android:textSize="22sp"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:text="Leave feedback"
-        app:drawableEndCompat="@drawable/ic_right"/>
+        app:drawableEndCompat="@drawable/ic_right"
+        android:focusable="true" />
+
+    <View
+        android:background="@android:color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="0.5dp"/>
 
     <TextView
+        android:id="@+id/tv_clear_all"
+        android:clickable="true"
+        android:background="?selectableItemBackground"
         android:padding="22dp"
         android:paddingLeft="23dp"
-        android:gravity=""
         android:textColor="#BE52F2"
-        android:textSize="28sp"
+        android:textSize="22sp"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:text="Clear history"
-        app:drawableEndCompat="@drawable/ic_right"/>
+        app:drawableEndCompat="@drawable/ic_right"
+        android:focusable="true" />
+
+    <View
+        android:background="@android:color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="0.5dp"/>
+
+    <TextView
+        android:layout_gravity="center"
+        android:layout_marginTop="141dp"
+        android:text="v.1.0.0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>

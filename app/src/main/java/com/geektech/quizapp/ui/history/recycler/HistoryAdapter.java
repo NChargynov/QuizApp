@@ -8,15 +8,19 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.geektech.quizapp.R;
+import com.geektech.quizapp.models.History;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HistoryAdapter extends RecyclerView.Adapter<HistoryViewHolder> {
 
-    private List<String> list;
+    private List<History> list = new ArrayList<>();
 
-    public HistoryAdapter(List<String> list) {
+
+    public void updateHistory(List<History> list) {
         this.list = list;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -29,7 +33,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull HistoryViewHolder holder, int position) {
-        holder.textView.setText(list.get(position));
+        holder.onBind(list.get(position));
     }
 
     @Override

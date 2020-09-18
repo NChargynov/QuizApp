@@ -16,7 +16,7 @@ public class Question {
     @SerializedName("incorrect_answers")
     private List<String> incorrectAnswer;
     private List<String> allAnswers;
-    private int selectAnswerPosition;
+    private Integer selectAnswerPosition;
     private boolean isAnswered;
 
     public boolean isAnswered() {
@@ -35,15 +35,15 @@ public class Question {
         this.allAnswers = allAnswers;
     }
 
-    public int getSelectAnswerPosition() {
+    public Integer getSelectAnswerPosition() {
         return selectAnswerPosition;
     }
 
-    public void setSelectAnswerPosition(int selectAnswerPosition) {
+    public void setSelectAnswerPosition(Integer selectAnswerPosition) {
         this.selectAnswerPosition = selectAnswerPosition;
     }
 
-    public Question(String category, String type, String difficulty, String question, String correctAnswer, List<String> incorrectAnswer, List<String> allAnswers, int selectAnswerPosition, boolean isAnswered) {
+    public Question(String category, String type, String difficulty, String question, String correctAnswer, List<String> incorrectAnswer, List<String> allAnswers, Integer selectAnswerPosition, boolean isAnswered) {
         this.category = category;
         this.type = type;
         this.difficulty = difficulty;

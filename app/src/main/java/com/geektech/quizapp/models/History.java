@@ -1,6 +1,6 @@
 package com.geektech.quizapp.models;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class History {
 
@@ -10,6 +10,15 @@ public class History {
     private int correctAnswer;
     private int amount;
     private Date createdAt;
+
+    public History(int id, String category, String difficulty, int correctAnswer, int amount, Date createdAt) {
+        this.category = category;
+        this.id = id;
+        this.difficulty = difficulty;
+        this.correctAnswer = correctAnswer;
+        this.amount = amount;
+        this.createdAt = createdAt;
+    }
 
     public String getCategory() {
         return category;

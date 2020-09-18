@@ -9,12 +9,12 @@ import com.geektech.quizapp.data.remote.IHistoryStorage;
 import com.geektech.quizapp.data.remote.IQuizApiClient;
 import com.geektech.quizapp.data.remote.QuizApiClient;
 import com.geektech.quizapp.db.QuizDataBase;
-import com.geektech.quizapp.ui.history.HistoryStorage;
+import com.geektech.quizapp.data.remote.HistoryStorage;
 
 public class QuizApp extends Application {
 
     public static IQuizApiClient iQuizApiClient;
-    private static IHistoryStorage iHistoryStorage;
+    public static IHistoryStorage iHistoryStorage;
     public static QuizDataBase quizDataBase;
     public static QuizRepository repository;
 
@@ -22,12 +22,12 @@ public class QuizApp extends Application {
     public void onCreate() {
         super.onCreate();
         iQuizApiClient = new QuizApiClient();
-        iHistoryStorage = new HistoryStorage();
         quizDataBase = Room.databaseBuilder(getApplicationContext(),
                 QuizDataBase.class, "quiz.db")
                 .fallbackToDestructiveMigration()
                 .allowMainThreadQueries()
                 .build();
+        iHistoryStorage = new HistoryStorage(quizDataBase.quizDao());
         repository = new QuizRepository(iQuizApiClient, iHistoryStorage, quizDataBase.quizDao());
     }
 

@@ -52,7 +52,7 @@ public class QuizActivity extends AppCompatActivity implements QuestionViewHolde
     private List<Question> questions;
 
 
-    public static final String EXTRA_CATEGORY = "category";
+    public static final String EXTRA_CATEGORY = "categoryData";
     public static final String EXTRA_DIFFICULTY = "difficulty";
     public static final String EXTRA_PROGRESS = "progress";
 
@@ -76,6 +76,19 @@ public class QuizActivity extends AppCompatActivity implements QuestionViewHolde
         if (difficultyDataSpinner.equals("Any")) {
             difficultyDataSpinner = null;
         }
+
+        mViewModel.openResultEvent.observe(this, new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer integer) {
+                ResultActivity.start(QuizActivity.this, integer);
+            }
+        });
+
+
+        mViewModel.finishEvent.observe(this, aVoid -> {
+            finish();
+        });
+
 
         mViewModel.init(progressSeekBar, categoryDataSpinner, difficultyDataSpinner);
 
@@ -160,8 +173,7 @@ public class QuizActivity extends AppCompatActivity implements QuestionViewHolde
     }
 
     public void onSkipClick(View view) {
-//        mViewModel.onSkipClick();
-        startActivity(new Intent(this, ResultActivity.class));
+        mViewModel.onSkipClick();
     }
 
     @Override
