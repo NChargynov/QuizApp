@@ -35,16 +35,17 @@
             android:id="@+id/btn_multiply_answer_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_button_answer"
+            android:background="@drawable/bg_button_answer_quiz_item"
             android:text="Colombo"
-            android:textColor="#6979F8" />
+            android:textColor="#6979F8"
+            />
 
         <Button
             android:id="@+id/btn_multiply_answer_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:background="@drawable/bg_button_answer"
+            android:background="@drawable/bg_button_answer_quiz_item"
             android:text="Moratuwa"
             android:textColor="#6979F8" />
 
@@ -54,7 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:background="@drawable/bg_button_answer"
+            android:background="@drawable/bg_button_answer_quiz_item"
             android:text="Negombo"
             android:textColor="#6979F8" />
 
@@ -64,7 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:background="@drawable/bg_button_answer"
+            android:background="@drawable/bg_button_answer_quiz_item"
             android:text="Kandy"
             android:textColor="#6979F8" />
 
@@ -87,7 +88,7 @@
             android:id="@+id/btn_boolean_answer_true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_button_answer"
+            android:background="@drawable/bg_button_answer_quiz_item"
             android:text="Yes"
             android:textColor="#6979F8" />
 
@@ -96,7 +97,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:background="@drawable/bg_button_answer"
+            android:background="@drawable/bg_button_answer_quiz_item"
             android:text="No"
             android:textColor="#6979F8" />
     </LinearLayout>

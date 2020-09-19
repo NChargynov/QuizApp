@@ -13,6 +13,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Parcelable;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -119,7 +120,17 @@ public class QuizActivity extends AppCompatActivity implements QuestionViewHolde
         });
 
         mViewModel.currentQuestionPosition.observe(this, integer -> {
-            recyclerView.smoothScrollToPosition(integer);
+            new CountDownTimer(400, 400) {
+                @Override
+                public void onTick(long millisUntilFinished) {
+
+                }
+
+                @Override
+                public void onFinish() {
+                    recyclerView.smoothScrollToPosition(integer);
+                }
+            }.start();
             progressBarAmount.setProgress(integer + 1);
             progressBarAmount.setMax(progressSeekBar);
             tvAmountItem.setText((integer + 1) + "/" + progressSeekBar);

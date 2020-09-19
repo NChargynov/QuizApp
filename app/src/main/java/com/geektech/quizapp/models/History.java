@@ -59,5 +59,9 @@ public class History {
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
+
+    public int getId() {
+        return id;
+    }
 }
 

@@ -16,7 +16,11 @@ import java.util.List;
 public class HistoryAdapter extends RecyclerView.Adapter<HistoryViewHolder> {
 
     private List<History> list = new ArrayList<>();
+    private final HistoryViewHolder.HistoryListener historyListener;
 
+    public HistoryAdapter(HistoryViewHolder.HistoryListener historyListener) {
+        this.historyListener = historyListener;
+    }
 
     public void updateHistory(List<History> list) {
         this.list = list;
@@ -28,7 +32,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryViewHolder> {
     public HistoryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.history_item, parent, false);
-        return new HistoryViewHolder(view);
+        return new HistoryViewHolder(view, historyListener);
     }
 
     @Override
@@ -40,4 +44,6 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryViewHolder> {
     public int getItemCount() {
         return list.size();
     }
+
+
 }
